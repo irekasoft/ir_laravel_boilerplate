@@ -35,6 +35,8 @@
 
 <h1>Hello</h1>
 
+<a href="show_react">Show React</a>
+
 </section>
 
 </div>

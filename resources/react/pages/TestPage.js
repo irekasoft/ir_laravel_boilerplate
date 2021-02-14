@@ -7,6 +7,11 @@ class TestPage extends Component {
     return (
     <div className="container">
         <h1>TestPage</h1>
+        <button className="btn btn-primary btn-sm"
+            onClick={()=>{
+                alert('Hello');
+            }}
+        >Hello</button>
     </div>
     );
   }
