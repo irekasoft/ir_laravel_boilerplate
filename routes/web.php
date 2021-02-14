@@ -23,14 +23,16 @@ Route::get('/', function () {
 
 Route::view('/show_react','show_react');
 
-
+/////////////////
+// ADMIN
+//
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function () {
 
-    Route::get('/',function(){
-        return redirect('/admin/home');
-    });
+  Route::get('/',function(){
+      return redirect('/admin/home');
+  });
 
-    Route::get('/dashboard','AdminController@index');
-    Route::get('/home', 'HomeController@index')->name('home');
+  Route::get('/dashboard','AdminController@index');
+  Route::get('/home', 'HomeController@index')->name('home');
 
 });
