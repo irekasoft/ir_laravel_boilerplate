@@ -1,15 +1,15 @@
 # iRekaSoft Laravel Boilerplate
 
+Laravel (5.8.x) + React(16.2.x) setup for web application.
+Utilizing Bootstrap 5.
+
 ### Clone to your Machine
 
 Using terminal, go to your development folder.
 
 `$ git clone git@github.com:irekasoft/ir_laravel_boilerplate.git`
 
-### About
-
-Laravel (5.8.x) + React(16.2.x) setup for web application.
-Utilizing Bootstrap 5.
+### Setup Project
 
 First Laravel setup:
 
