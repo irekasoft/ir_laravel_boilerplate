@@ -46,6 +46,51 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        if (strpos($request->getUri(), '/api/') !== false) {
+
+            if ($exception instanceof HttpException) {
+                $response['message'] = Response::$statusTexts[$exception->getStatusCode()];
+                $response['status_code'] = $exception->getStatusCode();
+            } else if ($exception instanceof ModelNotFoundException) {
+                $response['message'] = Response::$statusTexts[Response::HTTP_NOT_FOUND];
+                $response['status_code'] = Response::HTTP_NOT_FOUND;
+            }
+
+            $response = [
+                'msg' => (string)$exception,
+                'status_code' => '404',
+            ];
+
+            return \Response::json($response)->setStatusCode(404);
+
+            if ($this->isDebugMode()) {
+                $response['debug'] = [
+                    'exception' => get_class($exception),
+                    'trace' => $exception->getTrace()
+                ];
+            }
+
+            return response()->json([
+            'status'      => 'failed',
+            'status_code' => $response['status_code'],
+            'msg'     => $response['message'],
+            ], $response['status_code']);
+
+        } else if ($this->isHttpException($exception)) {
+
+            if ($exception->getStatusCode() == 404) {
+
+                return response()->view('errors.404', [], 404);
+
+            }else if ($exception->getStatusCode() == 500){
+
+                return response()->view('errors.500', [], 500);
+
+            }
+        }
+
         return parent::render($request, $exception);
     }
+
 }
