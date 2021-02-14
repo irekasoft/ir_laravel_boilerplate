@@ -24,6 +24,12 @@ Setup React
 
 `$ valet link <yoursite>`
 
+## Documentation 
+
+Laravel Documentation:
+
+https://laravel.com/docs/5.8/authentication
+
 ### How to setup auth 
 
 Setup .env file to setup integration with mysql.
