@@ -1,10 +1,12 @@
 # iRekaSoft Laravel Boilerplate
 
-Laravel + React setup for web application.
+Laravel (5.8.x) + React(16.2.x) setup for web application.
 
-How to first setup:
+First Laravel setup:
 
 `$ cp env.example .env`
+
+`$ php artisan key:generate`
 
 `$ composer install`
 
@@ -18,4 +20,3 @@ Setup React
 ### Using Valet 
 
 `$ valet link <yoursite>`
-
