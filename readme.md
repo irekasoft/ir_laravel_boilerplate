@@ -10,6 +10,8 @@ First Laravel setup:
 
 `$ composer install`
 
+
+
 Setup React
 
 `$ yarn install`
@@ -20,3 +22,9 @@ Setup React
 ### Using Valet 
 
 `$ valet link <yoursite>`
+
+### How to setup auth 
+
+Setup .env file to setup integration with mysql.
+
+`$ php artisan migrate `
