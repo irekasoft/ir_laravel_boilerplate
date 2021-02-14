@@ -4,18 +4,18 @@ Laravel + React setup for web application.
 
 How to first setup:
 
-$ cp env.example .env
+`$ cp env.example .env`
 
-$ composer install
+`$ composer install`
 
 Setup React
 
-$ yarn install
+`$ yarn install`
 
-$ yarn watch
+`$ yarn watch`
 
 
 ### Using Valet 
 
-$ valet link <yoursite>
+`$ valet link <yoursite>`
 
