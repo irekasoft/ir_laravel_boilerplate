@@ -15,9 +15,9 @@ First Laravel setup:
 
 `$ cp env.example .env`
 
-`$ php artisan key:generate`
-
 `$ composer install`
+
+`$ php artisan key:generate`
 
 
 
@@ -28,9 +28,12 @@ Setup React
 `$ yarn watch`
 
 
-### Using Valet 
+### How to setup auth 
 
-`$ valet link <yoursite>`
+Setup .env file to setup integration with mysql.
+
+`$ php artisan migrate`
+
 
 ### Documentation 
 
@@ -38,8 +41,7 @@ Laravel Documentation:
 
 https://laravel.com/docs/5.8/authentication
 
-### How to setup auth 
+### Using Valet 
 
-Setup .env file to setup integration with mysql.
+`$ valet link <yoursite>`
 
-`$ php artisan migrate `
