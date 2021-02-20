@@ -1,8 +1,9 @@
-@extends('layouts.master_admin')
+@extends('admin.layouts.master')
 
 @section('content')
 
-
-master detail
+@component('admin.components.navbar')  
+@slot('title',"Master Detail")
+@endcomponent
 
 @endsection

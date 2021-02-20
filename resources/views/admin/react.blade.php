@@ -1,7 +1,10 @@
-@extends('layouts.master_admin')
+@extends('admin.layouts.master')
 
 @section('content')
 
-react
+
+@component('admin.components.navbar')  
+@slot('title',"React")
+@endcomponent
 
 @endsection

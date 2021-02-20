@@ -1,0 +1,25 @@
+
+.navbar {
+    padding: 10px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    
+    background-color: $topnav_color;
+
+    -webkit-box-shadow: 0 4px 4px 0 rgba(120, 120, 120, 0.16);
+
+    box-shadow: 0 4px 4px 0 rgba(120, 120, 120, 0.16);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+
+    & span {
+        color: rgb(220, 220, 220);
+        font-weight: bold;
+    }
+  }
