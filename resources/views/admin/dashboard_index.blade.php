@@ -1,7 +1,9 @@
-@extends('layouts.master_admin')
+@extends('admin.layouts.master')
 
 @section('content')
 
-Hello    
-    
+@component('admin.components.navbar')  
+@slot('title',"Dashboard")
+@endcomponent
+
 @endsection
