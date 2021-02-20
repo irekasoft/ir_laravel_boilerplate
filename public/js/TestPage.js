@@ -86,6 +86,112 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-calendar-heatmap/dist/styles.css":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/react-calendar-heatmap/dist/styles.css ***!
+  \*********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*\n * react-calendar-heatmap styles\n *\n * All of the styles in this file are optional and configurable!\n * The github and gitlab color scales are provided for reference.\n */\n\n.react-calendar-heatmap text {\n  font-size: 10px;\n  fill: #aaa;\n}\n\n.react-calendar-heatmap .react-calendar-heatmap-small-text {\n  font-size: 5px;\n}\n\n.react-calendar-heatmap rect:hover {\n  stroke: #555;\n  stroke-width: 1px;\n}\n\n/*\n * Default color scale\n */\n\n.react-calendar-heatmap .color-empty {\n  fill: #eeeeee;\n}\n\n.react-calendar-heatmap .color-filled {\n  fill: #8cc665;\n}\n\n/*\n * Github color scale\n */\n\n.react-calendar-heatmap .color-github-0 {\n  fill: #eeeeee;\n}\n.react-calendar-heatmap .color-github-1 {\n  fill: #d6e685;\n}\n.react-calendar-heatmap .color-github-2 {\n  fill: #8cc665;\n}\n.react-calendar-heatmap .color-github-3 {\n  fill: #44a340;\n}\n.react-calendar-heatmap .color-github-4 {\n  fill: #1e6823;\n}\n\n/*\n * Gitlab color scale\n */\n\n.react-calendar-heatmap .color-gitlab-0 {\n  fill: #ededed;\n}\n.react-calendar-heatmap .color-gitlab-1 {\n  fill: #acd5f2;\n}\n.react-calendar-heatmap .color-gitlab-2 {\n  fill: #7fa8d1;\n}\n.react-calendar-heatmap .color-gitlab-3 {\n  fill: #49729b;\n}\n.react-calendar-heatmap .color-gitlab-4 {\n  fill: #254e77;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -323,6 +429,827 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar-heatmap/dist/react-calendar-heatmap.umd.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-calendar-heatmap/dist/react-calendar-heatmap.umd.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory(__webpack_require__(/*! react */ "./node_modules/react/index.js")) :
+  undefined;
+}(this, function (React) { 'use strict';
+
+  React = React && React.hasOwnProperty('default') ? React['default'] : React;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+  }
+
+  function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf(o, p);
+  }
+
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    }
+
+    return _assertThisInitialized(self);
+  }
+
+  function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+  }
+
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArrayLimit(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance");
+  }
+
+  function createCommonjsModule(fn, module) {
+  	return module = { exports: {} }, fn(module, module.exports), module.exports;
+  }
+
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+  var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+  var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+
+  function emptyFunction() {}
+  function emptyFunctionWithReset() {}
+  emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+  var factoryWithThrowingShims = function() {
+    function shim(props, propName, componentName, location, propFullName, secret) {
+      if (secret === ReactPropTypesSecret_1) {
+        // It is still safe when called from React.
+        return;
+      }
+      var err = new Error(
+        'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+        'Use PropTypes.checkPropTypes() to call them. ' +
+        'Read more at http://fb.me/use-check-prop-types'
+      );
+      err.name = 'Invariant Violation';
+      throw err;
+    }  shim.isRequired = shim;
+    function getShim() {
+      return shim;
+    }  // Important!
+    // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+    var ReactPropTypes = {
+      array: shim,
+      bool: shim,
+      func: shim,
+      number: shim,
+      object: shim,
+      string: shim,
+      symbol: shim,
+
+      any: shim,
+      arrayOf: getShim,
+      element: shim,
+      elementType: shim,
+      instanceOf: getShim,
+      node: shim,
+      objectOf: getShim,
+      oneOf: getShim,
+      oneOfType: getShim,
+      shape: getShim,
+      exact: getShim,
+
+      checkPropTypes: emptyFunctionWithReset,
+      resetWarningCache: emptyFunction
+    };
+
+    ReactPropTypes.PropTypes = ReactPropTypes;
+
+    return ReactPropTypes;
+  };
+
+  var propTypes = createCommonjsModule(function (module) {
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+  {
+    // By explicitly using `prop-types` you are opting into new production behavior.
+    // http://fb.me/prop-types-in-prod
+    module.exports = factoryWithThrowingShims();
+  }
+  });
+
+  function areInputsEqual(newInputs, lastInputs) {
+    if (newInputs.length !== lastInputs.length) {
+      return false;
+    }
+
+    for (var i = 0; i < newInputs.length; i++) {
+      if (newInputs[i] !== lastInputs[i]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function memoizeOne(resultFn, isEqual) {
+    if (isEqual === void 0) {
+      isEqual = areInputsEqual;
+    }
+
+    var lastThis;
+    var lastArgs = [];
+    var lastResult;
+    var calledOnce = false;
+
+    var result = function memoized() {
+      for (var _len = arguments.length, newArgs = new Array(_len), _key = 0; _key < _len; _key++) {
+        newArgs[_key] = arguments[_key];
+      }
+
+      if (calledOnce && lastThis === this && isEqual(newArgs, lastArgs)) {
+        return lastResult;
+      }
+
+      lastResult = resultFn.apply(this, newArgs);
+      calledOnce = true;
+      lastThis = this;
+      lastArgs = newArgs;
+      return lastResult;
+    };
+
+    return result;
+  }
+
+  var MILLISECONDS_IN_ONE_DAY = 24 * 60 * 60 * 1000;
+  var DAYS_IN_WEEK = 7;
+  var MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var DAY_LABELS = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
+
+  // returns a new date shifted a certain number of days (can be negative)
+  function shiftDate(date, numDays) {
+    var newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + numDays);
+    return newDate;
+  }
+  function getBeginningTimeForDate(date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  } // obj can be a parseable string, a millisecond timestamp, or a Date object
+
+  function convertToDate(obj) {
+    return obj instanceof Date ? obj : new Date(obj);
+  }
+  function dateNDaysAgo(numDaysAgo) {
+    return shiftDate(new Date(), -numDaysAgo);
+  }
+  function getRange(count) {
+    var arr = [];
+
+    for (var idx = 0; idx < count; idx += 1) {
+      arr.push(idx);
+    }
+
+    return arr;
+  }
+
+  var SQUARE_SIZE = 10;
+  var MONTH_LABEL_GUTTER_SIZE = 4;
+  var CSS_PSEDUO_NAMESPACE = 'react-calendar-heatmap-';
+
+  var CalendarHeatmap =
+  /*#__PURE__*/
+  function (_React$Component) {
+    _inherits(CalendarHeatmap, _React$Component);
+
+    function CalendarHeatmap() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      _classCallCheck(this, CalendarHeatmap);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(CalendarHeatmap)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+      _defineProperty(_assertThisInitialized(_this), "getValueCache", memoizeOne(function (props) {
+        return props.values.reduce(function (memo, value) {
+          var date = convertToDate(value.date);
+          var index = Math.floor((date - _this.getStartDateWithEmptyDays()) / MILLISECONDS_IN_ONE_DAY); // eslint-disable-next-line no-param-reassign
+
+          memo[index] = {
+            value: value,
+            className: _this.props.classForValue(value),
+            title: _this.props.titleForValue ? _this.props.titleForValue(value) : null,
+            tooltipDataAttrs: _this.getTooltipDataAttrsForValue(value)
+          };
+          return memo;
+        }, {});
+      }));
+
+      return _this;
+    }
+
+    _createClass(CalendarHeatmap, [{
+      key: "getDateDifferenceInDays",
+      value: function getDateDifferenceInDays() {
+        var _this$props = this.props,
+            startDate = _this$props.startDate,
+            numDays = _this$props.numDays;
+
+        if (numDays) {
+          // eslint-disable-next-line no-console
+          console.warn('numDays is a deprecated prop. It will be removed in the next release. Consider using the startDate prop instead.');
+          return numDays;
+        }
+
+        var timeDiff = this.getEndDate() - convertToDate(startDate);
+        return Math.ceil(timeDiff / MILLISECONDS_IN_ONE_DAY);
+      }
+    }, {
+      key: "getSquareSizeWithGutter",
+      value: function getSquareSizeWithGutter() {
+        return SQUARE_SIZE + this.props.gutterSize;
+      }
+    }, {
+      key: "getMonthLabelSize",
+      value: function getMonthLabelSize() {
+        if (!this.props.showMonthLabels) {
+          return 0;
+        }
+
+        if (this.props.horizontal) {
+          return SQUARE_SIZE + MONTH_LABEL_GUTTER_SIZE;
+        }
+
+        return 2 * (SQUARE_SIZE + MONTH_LABEL_GUTTER_SIZE);
+      }
+    }, {
+      key: "getWeekdayLabelSize",
+      value: function getWeekdayLabelSize() {
+        if (!this.props.showWeekdayLabels) {
+          return 0;
+        }
+
+        if (this.props.horizontal) {
+          return 30;
+        }
+
+        return SQUARE_SIZE * 1.5;
+      }
+    }, {
+      key: "getStartDate",
+      value: function getStartDate() {
+        return shiftDate(this.getEndDate(), -this.getDateDifferenceInDays() + 1); // +1 because endDate is inclusive
+      }
+    }, {
+      key: "getEndDate",
+      value: function getEndDate() {
+        return getBeginningTimeForDate(convertToDate(this.props.endDate));
+      }
+    }, {
+      key: "getStartDateWithEmptyDays",
+      value: function getStartDateWithEmptyDays() {
+        return shiftDate(this.getStartDate(), -this.getNumEmptyDaysAtStart());
+      }
+    }, {
+      key: "getNumEmptyDaysAtStart",
+      value: function getNumEmptyDaysAtStart() {
+        return this.getStartDate().getDay();
+      }
+    }, {
+      key: "getNumEmptyDaysAtEnd",
+      value: function getNumEmptyDaysAtEnd() {
+        return DAYS_IN_WEEK - 1 - this.getEndDate().getDay();
+      }
+    }, {
+      key: "getWeekCount",
+      value: function getWeekCount() {
+        var numDaysRoundedToWeek = this.getDateDifferenceInDays() + this.getNumEmptyDaysAtStart() + this.getNumEmptyDaysAtEnd();
+        return Math.ceil(numDaysRoundedToWeek / DAYS_IN_WEEK);
+      }
+    }, {
+      key: "getWeekWidth",
+      value: function getWeekWidth() {
+        return DAYS_IN_WEEK * this.getSquareSizeWithGutter();
+      }
+    }, {
+      key: "getWidth",
+      value: function getWidth() {
+        return this.getWeekCount() * this.getSquareSizeWithGutter() - (this.props.gutterSize - this.getWeekdayLabelSize());
+      }
+    }, {
+      key: "getHeight",
+      value: function getHeight() {
+        return this.getWeekWidth() + (this.getMonthLabelSize() - this.props.gutterSize) + this.getWeekdayLabelSize();
+      }
+    }, {
+      key: "getValueForIndex",
+      value: function getValueForIndex(index) {
+        if (this.valueCache[index]) {
+          return this.valueCache[index].value;
+        }
+
+        return null;
+      }
+    }, {
+      key: "getClassNameForIndex",
+      value: function getClassNameForIndex(index) {
+        if (this.valueCache[index]) {
+          return this.valueCache[index].className;
+        }
+
+        return this.props.classForValue(null);
+      }
+    }, {
+      key: "getTitleForIndex",
+      value: function getTitleForIndex(index) {
+        if (this.valueCache[index]) {
+          return this.valueCache[index].title;
+        }
+
+        return this.props.titleForValue ? this.props.titleForValue(null) : null;
+      }
+    }, {
+      key: "getTooltipDataAttrsForIndex",
+      value: function getTooltipDataAttrsForIndex(index) {
+        if (this.valueCache[index]) {
+          return this.valueCache[index].tooltipDataAttrs;
+        }
+
+        return this.getTooltipDataAttrsForValue({
+          date: null,
+          count: null
+        });
+      }
+    }, {
+      key: "getTooltipDataAttrsForValue",
+      value: function getTooltipDataAttrsForValue(value) {
+        var tooltipDataAttrs = this.props.tooltipDataAttrs;
+
+        if (typeof tooltipDataAttrs === 'function') {
+          return tooltipDataAttrs(value);
+        }
+
+        return tooltipDataAttrs;
+      }
+    }, {
+      key: "getTransformForWeek",
+      value: function getTransformForWeek(weekIndex) {
+        if (this.props.horizontal) {
+          return "translate(".concat(weekIndex * this.getSquareSizeWithGutter(), ", 0)");
+        }
+
+        return "translate(0, ".concat(weekIndex * this.getSquareSizeWithGutter(), ")");
+      }
+    }, {
+      key: "getTransformForWeekdayLabels",
+      value: function getTransformForWeekdayLabels() {
+        if (this.props.horizontal) {
+          return "translate(".concat(SQUARE_SIZE, ", ").concat(this.getMonthLabelSize(), ")");
+        }
+
+        return null;
+      }
+    }, {
+      key: "getTransformForMonthLabels",
+      value: function getTransformForMonthLabels() {
+        if (this.props.horizontal) {
+          return "translate(".concat(this.getWeekdayLabelSize(), ", 0)");
+        }
+
+        return "translate(".concat(this.getWeekWidth() + MONTH_LABEL_GUTTER_SIZE, ", ").concat(this.getWeekdayLabelSize(), ")");
+      }
+    }, {
+      key: "getTransformForAllWeeks",
+      value: function getTransformForAllWeeks() {
+        if (this.props.horizontal) {
+          return "translate(".concat(this.getWeekdayLabelSize(), ", ").concat(this.getMonthLabelSize(), ")");
+        }
+
+        return "translate(0, ".concat(this.getWeekdayLabelSize(), ")");
+      }
+    }, {
+      key: "getViewBox",
+      value: function getViewBox() {
+        if (this.props.horizontal) {
+          return "0 0 ".concat(this.getWidth(), " ").concat(this.getHeight());
+        }
+
+        return "0 0 ".concat(this.getHeight(), " ").concat(this.getWidth());
+      }
+    }, {
+      key: "getSquareCoordinates",
+      value: function getSquareCoordinates(dayIndex) {
+        if (this.props.horizontal) {
+          return [0, dayIndex * this.getSquareSizeWithGutter()];
+        }
+
+        return [dayIndex * this.getSquareSizeWithGutter(), 0];
+      }
+    }, {
+      key: "getWeekdayLabelCoordinates",
+      value: function getWeekdayLabelCoordinates(dayIndex) {
+        if (this.props.horizontal) {
+          return [0, (dayIndex + 1) * SQUARE_SIZE + dayIndex * this.props.gutterSize];
+        }
+
+        return [dayIndex * SQUARE_SIZE + dayIndex * this.props.gutterSize, SQUARE_SIZE];
+      }
+    }, {
+      key: "getMonthLabelCoordinates",
+      value: function getMonthLabelCoordinates(weekIndex) {
+        if (this.props.horizontal) {
+          return [weekIndex * this.getSquareSizeWithGutter(), this.getMonthLabelSize() - MONTH_LABEL_GUTTER_SIZE];
+        }
+
+        var verticalOffset = -2;
+        return [0, (weekIndex + 1) * this.getSquareSizeWithGutter() + verticalOffset];
+      }
+    }, {
+      key: "handleClick",
+      value: function handleClick(value) {
+        if (this.props.onClick) {
+          this.props.onClick(value);
+        }
+      }
+    }, {
+      key: "handleMouseOver",
+      value: function handleMouseOver(e, value) {
+        if (this.props.onMouseOver) {
+          this.props.onMouseOver(e, value);
+        }
+      }
+    }, {
+      key: "handleMouseLeave",
+      value: function handleMouseLeave(e, value) {
+        if (this.props.onMouseLeave) {
+          this.props.onMouseLeave(e, value);
+        }
+      }
+    }, {
+      key: "renderSquare",
+      value: function renderSquare(dayIndex, index) {
+        var _this2 = this;
+
+        var indexOutOfRange = index < this.getNumEmptyDaysAtStart() || index >= this.getNumEmptyDaysAtStart() + this.getDateDifferenceInDays();
+
+        if (indexOutOfRange && !this.props.showOutOfRangeDays) {
+          return null;
+        }
+
+        var _this$getSquareCoordi = this.getSquareCoordinates(dayIndex),
+            _this$getSquareCoordi2 = _slicedToArray(_this$getSquareCoordi, 2),
+            x = _this$getSquareCoordi2[0],
+            y = _this$getSquareCoordi2[1];
+
+        var value = this.getValueForIndex(index);
+        var rect = // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
+        React.createElement("rect", _extends({
+          key: index,
+          width: SQUARE_SIZE,
+          height: SQUARE_SIZE,
+          x: x,
+          y: y,
+          className: this.getClassNameForIndex(index),
+          onClick: function onClick() {
+            return _this2.handleClick(value);
+          },
+          onMouseOver: function onMouseOver(e) {
+            return _this2.handleMouseOver(e, value);
+          },
+          onMouseLeave: function onMouseLeave(e) {
+            return _this2.handleMouseLeave(e, value);
+          }
+        }, this.getTooltipDataAttrsForIndex(index)), React.createElement("title", null, this.getTitleForIndex(index)));
+        var transformDayElement = this.props.transformDayElement;
+        return transformDayElement ? transformDayElement(rect, value, index) : rect;
+      }
+    }, {
+      key: "renderWeek",
+      value: function renderWeek(weekIndex) {
+        var _this3 = this;
+
+        return React.createElement("g", {
+          key: weekIndex,
+          transform: this.getTransformForWeek(weekIndex),
+          className: "".concat(CSS_PSEDUO_NAMESPACE, "week")
+        }, getRange(DAYS_IN_WEEK).map(function (dayIndex) {
+          return _this3.renderSquare(dayIndex, weekIndex * DAYS_IN_WEEK + dayIndex);
+        }));
+      }
+    }, {
+      key: "renderAllWeeks",
+      value: function renderAllWeeks() {
+        var _this4 = this;
+
+        return getRange(this.getWeekCount()).map(function (weekIndex) {
+          return _this4.renderWeek(weekIndex);
+        });
+      }
+    }, {
+      key: "renderMonthLabels",
+      value: function renderMonthLabels() {
+        var _this5 = this;
+
+        if (!this.props.showMonthLabels) {
+          return null;
+        }
+
+        var weekRange = getRange(this.getWeekCount() - 1); // don't render for last week, because label will be cut off
+
+        return weekRange.map(function (weekIndex) {
+          var endOfWeek = shiftDate(_this5.getStartDateWithEmptyDays(), (weekIndex + 1) * DAYS_IN_WEEK);
+
+          var _this5$getMonthLabelC = _this5.getMonthLabelCoordinates(weekIndex),
+              _this5$getMonthLabelC2 = _slicedToArray(_this5$getMonthLabelC, 2),
+              x = _this5$getMonthLabelC2[0],
+              y = _this5$getMonthLabelC2[1];
+
+          return endOfWeek.getDate() >= 1 && endOfWeek.getDate() <= DAYS_IN_WEEK ? React.createElement("text", {
+            key: weekIndex,
+            x: x,
+            y: y,
+            className: "".concat(CSS_PSEDUO_NAMESPACE, "month-label")
+          }, _this5.props.monthLabels[endOfWeek.getMonth()]) : null;
+        });
+      }
+    }, {
+      key: "renderWeekdayLabels",
+      value: function renderWeekdayLabels() {
+        var _this6 = this;
+
+        if (!this.props.showWeekdayLabels) {
+          return null;
+        }
+
+        return this.props.weekdayLabels.map(function (weekdayLabel, dayIndex) {
+          var _this6$getWeekdayLabe = _this6.getWeekdayLabelCoordinates(dayIndex),
+              _this6$getWeekdayLabe2 = _slicedToArray(_this6$getWeekdayLabe, 2),
+              x = _this6$getWeekdayLabe2[0],
+              y = _this6$getWeekdayLabe2[1];
+
+          var cssClasses = "".concat(_this6.props.horizontal ? '' : "".concat(CSS_PSEDUO_NAMESPACE, "small-text"), " ").concat(CSS_PSEDUO_NAMESPACE, "weekday-label"); // eslint-disable-next-line no-bitwise
+
+          return dayIndex & 1 ? React.createElement("text", {
+            key: "".concat(x).concat(y),
+            x: x,
+            y: y,
+            className: cssClasses
+          }, weekdayLabel) : null;
+        });
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        this.valueCache = this.getValueCache(this.props);
+        return React.createElement("svg", {
+          className: "react-calendar-heatmap",
+          viewBox: this.getViewBox()
+        }, React.createElement("g", {
+          transform: this.getTransformForMonthLabels(),
+          className: "".concat(CSS_PSEDUO_NAMESPACE, "month-labels")
+        }, this.renderMonthLabels()), React.createElement("g", {
+          transform: this.getTransformForAllWeeks(),
+          className: "".concat(CSS_PSEDUO_NAMESPACE, "all-weeks")
+        }, this.renderAllWeeks()), React.createElement("g", {
+          transform: this.getTransformForWeekdayLabels(),
+          className: "".concat(CSS_PSEDUO_NAMESPACE, "weekday-labels")
+        }, this.renderWeekdayLabels()));
+      }
+    }]);
+
+    return CalendarHeatmap;
+  }(React.Component);
+
+  CalendarHeatmap.propTypes = {
+    values: propTypes.arrayOf(propTypes.shape({
+      date: propTypes.oneOfType([propTypes.string, propTypes.number, propTypes.instanceOf(Date)]).isRequired
+    }).isRequired).isRequired,
+    // array of objects with date and arbitrary metadata
+    numDays: propTypes.number,
+    // number of days back from endDate to show
+    startDate: propTypes.oneOfType([propTypes.string, propTypes.number, propTypes.instanceOf(Date)]),
+    // start of date range
+    endDate: propTypes.oneOfType([propTypes.string, propTypes.number, propTypes.instanceOf(Date)]),
+    // end of date range
+    gutterSize: propTypes.number,
+    // size of space between squares
+    horizontal: propTypes.bool,
+    // whether to orient horizontally or vertically
+    showMonthLabels: propTypes.bool,
+    // whether to show month labels
+    showWeekdayLabels: propTypes.bool,
+    // whether to show weekday labels
+    showOutOfRangeDays: propTypes.bool,
+    // whether to render squares for extra days in week after endDate, and before start date
+    tooltipDataAttrs: propTypes.oneOfType([propTypes.object, propTypes.func]),
+    // data attributes to add to square for setting 3rd party tooltips, e.g. { 'data-toggle': 'tooltip' } for bootstrap tooltips
+    titleForValue: propTypes.func,
+    // function which returns title text for value
+    classForValue: propTypes.func,
+    // function which returns html class for value
+    monthLabels: propTypes.arrayOf(propTypes.string),
+    // An array with 12 strings representing the text from janurary to december
+    weekdayLabels: propTypes.arrayOf(propTypes.string),
+    // An array with 7 strings representing the text from Sun to Sat
+    onClick: propTypes.func,
+    // callback function when a square is clicked
+    onMouseOver: propTypes.func,
+    // callback function when mouse pointer is over a square
+    onMouseLeave: propTypes.func,
+    // callback function when mouse pointer is left a square
+    transformDayElement: propTypes.func // function to further transform the svg element for a single day
+
+  };
+  CalendarHeatmap.defaultProps = {
+    numDays: null,
+    startDate: dateNDaysAgo(200),
+    endDate: new Date(),
+    gutterSize: 1,
+    horizontal: true,
+    showMonthLabels: true,
+    showWeekdayLabels: false,
+    showOutOfRangeDays: false,
+    tooltipDataAttrs: null,
+    titleForValue: null,
+    classForValue: function classForValue(value) {
+      return value ? 'color-filled' : 'color-empty';
+    },
+    monthLabels: MONTH_LABELS,
+    weekdayLabels: DAY_LABELS,
+    onClick: null,
+    onMouseOver: null,
+    onMouseLeave: null,
+    transformDayElement: null
+  };
+
+  return CalendarHeatmap;
+
+}));
+
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar-heatmap/dist/styles.css":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-calendar-heatmap/dist/styles.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../postcss-loader/src??ref--7-2!./styles.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-calendar-heatmap/dist/styles.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -28601,6 +29528,515 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
 /***/ "./resources/react/pages/TestPage.js":
 /*!*******************************************!*\
   !*** ./resources/react/pages/TestPage.js ***!
@@ -28614,6 +30050,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-calendar-heatmap */ "./node_modules/react-calendar-heatmap/dist/react-calendar-heatmap.umd.js");
+/* harmony import */ var react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_calendar_heatmap_dist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-calendar-heatmap/dist/styles.css */ "./node_modules/react-calendar-heatmap/dist/styles.css");
+/* harmony import */ var react_calendar_heatmap_dist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_calendar_heatmap_dist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28639,6 +30079,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
 var TestPage = /*#__PURE__*/function (_Component) {
   _inherits(TestPage, _Component);
 
@@ -28653,14 +30095,28 @@ var TestPage = /*#__PURE__*/function (_Component) {
   _createClass(TestPage, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "TestPage"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React Page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-primary btn-sm",
         onClick: function onClick() {
           alert('Hello');
         }
-      }, "Hello"));
+      }, "Hello"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heatmap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        startDate: new Date('2021-01-01'),
+        endDate: new Date('2021-12-31'),
+        values: [{
+          date: '2021-01-01',
+          count: 12
+        }, {
+          date: '2021-01-22',
+          count: 122
+        }, {
+          date: '2021-01-30',
+          count: 38
+        } // ...and so on
+        ]
+      })));
     }
   }]);
 

@@ -1,0 +1,37 @@
+// Variable
+
+$sidebar_width : 200px;
+$topnav_height: 56px;
+
+$topnav_color: rgb(23, 23, 23);
+
+@import 'sidebar';
+
+#topnav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: $topnav_height;
+    padding:12px;
+    background-color: $topnav_color;
+    z-index: 1000;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-content{
+  
+  width: inherit;
+  background-color: rgb(240, 248, 249);
+  padding-top: $topnav_height;
+
+}
+
+
+

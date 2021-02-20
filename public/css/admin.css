@@ -1,0 +1,66 @@
+.sidebar {
+  background-color: #303030;
+  width: 200px;
+  padding-top: 56px;
+  color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: margin-left 0.3s;
+  z-index: 999;
+}
+
+.sidebar .navbar-nav .nav-item {
+  background-color: rgba(89, 89, 89, 0.79);
+  color: white;
+  margin: 4px;
+  margin-bottom: 0px;
+  padding: 0px;
+  padding-left: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.sidebar .navbar-nav .active {
+  background-color: black;
+  color: white;
+}
+
+.sidebar .navbar-nav a {
+  color: white;
+}
+
+.sidebar section {
+  padding: 8px;
+  font-size: 10px;
+  margin-bottom: -8px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+#topnav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 56px;
+  padding: 12px;
+  background-color: #171717;
+  z-index: 1000;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-content {
+  width: inherit;
+  background-color: #f0f8f9;
+  padding-top: 56px;
+}
+

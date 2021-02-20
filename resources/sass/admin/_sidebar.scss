@@ -1,0 +1,53 @@
+// SIDEBAR
+
+.sidebar {
+
+  background-color: rgb(48, 48, 48);
+  width: $sidebar_width;
+  padding-top: $topnav_height;
+  color: white;
+  
+  overflow-y: scroll; // Let item inside scroll
+  overflow-x: hidden;
+
+  transition: margin-left .3s;
+  z-index: 999;
+    
+  & .navbar-nav{
+
+    & .nav-item {
+      background-color: rgba(89, 89, 89, 0.79);
+      color: white;
+      margin:4px;
+      margin-bottom:0px;
+      padding:0px;
+      padding-left: 10px;
+      border-radius: 8px;
+      font-size:13px;
+    }
+  
+    .active {
+      background-color: black;
+      color: white;
+    }
+  
+    a {
+      color:white;
+    }      
+  
+  }  
+
+  & section {
+    
+    padding:8px;
+    font-size: 10px;
+    margin-bottom: -8px;
+
+  }
+  
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
