@@ -4,13 +4,15 @@ const body = document.querySelector('body');
 const sidebar = document.querySelector('.sidebar');
 
 const overlay = document.querySelector('.overlay');
-const fadeElems = document.querySelectorAll('.has-fade');
+const fadeElems = document.querySelectorAll('.can-fade');
 
 btnHamburger.addEventListener('click', function(){
 
   console.log('click hamburger');
 
-  if(sidebar.classList.contains('open')){ // Close Hamburger Menu
+  if(sidebar.classList.contains('open')){ 
+    
+    // Close Hamburger Menu
 
     body.classList.remove('noscroll');
 
@@ -21,7 +23,9 @@ btnHamburger.addEventListener('click', function(){
       element.classList.add('fade-out');
     });
     
-  } else { // Open Hamburger Menu
+  } else { 
+    
+    // Open Hamburger Menu
     body.classList.add('noscroll');
 
     sidebar.classList.add('open');
@@ -31,4 +35,5 @@ btnHamburger.addEventListener('click', function(){
     });
 
   }  
+
 });

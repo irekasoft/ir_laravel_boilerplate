@@ -28,6 +28,10 @@
   z-index: 9000;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .sidebar {
   position: fixed;
   height: 100%;
@@ -102,6 +106,138 @@
 
 .header.open .header__toggle > span:last-child {
   transform: rotate(-45deg);
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 200ms ease-in-out forwards;
+          animation: fade-in 200ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 200ms ease-in-out forwards;
+          animation: fade-out 200ms ease-in-out forwards;
+}
+
+.can-slide-left {
+  visibility: hidden;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    translate: translateX(-30px);
+  }
+
+  to {
+    translate: translateX(0px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    translate: translateX(-30px);
+  }
+
+  to {
+    translate: translateX(0px);
+  }
+}
+
+.fade-in {
+  -webkit-animation: slide-in 1200ms ease-in-out forwards;
+          animation: slide-in 1200ms ease-in-out forwards;
+}
+
+@-webkit-keyframes slide-out {
+  from {
+    translate: translateX(0px);
+  }
+
+  to {
+    translate: translateX(-30px);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    translate: translateX(0px);
+  }
+
+  to {
+    translate: translateX(-30px);
+  }
+}
+
+.slide-out {
+  -webkit-animation: slide-out 1200ms ease-in-out forwards;
+          animation: slide-out 1200ms ease-in-out forwards;
 }
 
 #topnav {

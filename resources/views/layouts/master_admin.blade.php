@@ -23,7 +23,7 @@
 {{-- TOPNAV --}}
 <nav id="topnav">
   <div class="hide-for-desktop">
-    <a id="btnHamburger" class="asdf" style="color:white;" >Button</a>
+    <a id="btnHamburger" class="cursor-pointer" style="color:white;" >Menu</a>
 
   </div>
   
@@ -34,7 +34,7 @@
 <div id="wrapper">
 
 {{-- SIDEBAR --}}
-<div class="sidebar navbar-nav open">
+<div class="sidebar navbar-nav can-fade">
 
 
 <section >SECTION 1</section>  

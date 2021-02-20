@@ -97,7 +97,7 @@ var btnHamburger = document.querySelector('#btnHamburger');
 var body = document.querySelector('body');
 var sidebar = document.querySelector('.sidebar');
 var overlay = document.querySelector('.overlay');
-var fadeElems = document.querySelectorAll('.has-fade');
+var fadeElems = document.querySelectorAll('.can-fade');
 btnHamburger.addEventListener('click', function () {
   console.log('click hamburger');
 
