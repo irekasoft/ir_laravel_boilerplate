@@ -34,6 +34,14 @@ Setup .env file to setup integration with mysql.
 
 `$ php artisan migrate`
 
+## Make a view 
+
+Make a blade view file at views/hello.blade.php by typing.
+
+`$ php artisan make:view hello`
+
+
+
 
 ### Documentation 
 

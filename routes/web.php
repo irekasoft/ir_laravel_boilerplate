@@ -25,12 +25,16 @@ Route::view('/show_react','show_react');
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function () {
 
   Route::get('/',function(){
-    return redirect('/admin/home');
+    return redirect('/admin/dashboard');
   });
   
   Route::get('/dashboard', 'AdminController@index');
 
   Route::get('/home', 'HomeController@index')->name('dashboard');
+
+  Route::get('/masterdetail', 'AdminController@masterdetail');
+
+  Route::view('/react', 'admin.react');
   
 
 });

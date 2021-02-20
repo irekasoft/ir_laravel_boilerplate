@@ -18,46 +18,60 @@
 </head>
 <body>
 
+{{-- <div class="overlay"></div> --}}
+
 {{-- TOPNAV --}}
 <nav id="topnav">
+  <div class="hide-for-desktop">
+    <a id="btnHamburger" class="asdf" style="color:white;" >Button</a>
+
+  </div>
   
 </nav>
+
 
 {{-- WRAPPER --}}
 <div id="wrapper">
 
 {{-- SIDEBAR --}}
-<div class="sidebar navbar-nav">
+<div class="sidebar navbar-nav open">
 
 
 <section >SECTION 1</section>  
 
 <ul class="navbar-nav">
-  <li class="nav-item active">
-    <a href="" class="nav-link">
+  <li class="nav-item {{ (Request::is('admin/dashboard', 'admin/dashboard/*') ? 'active' : '') }}">
+    <a href="/admin/dashboard" class="nav-link">
+      <i class="bi bi-house-door mr-2" style="margin-bottom:-15px;margin-right:3px;"></i>
       Dashboard
     </a>
   </li>
-  <li class="nav-item ">
-    <a href="" class="nav-link">
-      ABC
+  <li class="nav-item {{ (Request::is('admin/masterdetail', 'admin/masterdetail/*') ? 'active' : '') }}">
+    <a href="/admin/masterdetail" class="nav-link">
+      <i class="bi bi-cpu-fill mr-2"></i>
+      MasterDetail
     </a>
   </li>
-  <li class="nav-item ">
-    <a href="" class="nav-link">
-      ABC
+  <li class="nav-item {{ (Request::is('admin/react', 'admin/react/*') ? 'active' : '') }}">
+    <a href="/admin/react" class="nav-link">
+      <i class="bi bi-cpu-fill mr-2"></i>
+      React
     </a>
   </li>
 </ul>
 
 </div>
 
-<div class="main-content">
+
+<div id="content-wrapper">
 
 @yield('content')
 
 </div>    
 </div>
+
+
+<script src="{{ asset('/js/admin.js') }}" ></script>
     
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>    

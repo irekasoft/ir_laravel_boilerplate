@@ -1,0 +1,25 @@
+
+// Visibility
+.hide-for-mobile {
+  display: block;
+  @media (max-width: $md-breakpoint-width){
+      display: none;   
+  }
+}
+  
+.hide-for-desktop {
+  display: block;
+  @media (min-width: $md-breakpoint-width){
+    display: none;
+  }
+}
+
+.overlay {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.687);
+    z-index: 9000;
+}

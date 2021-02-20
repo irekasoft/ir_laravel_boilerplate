@@ -1,0 +1,23 @@
+// Hamburger Open Styles
+.header {
+    position: relative;
+    z-index: 1;
+
+    &.open {
+
+        .header__toggle {
+        > span:first-child {
+            transform: rotate(45deg);
+        }
+        
+        > span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        > span:last-child {
+            transform: rotate(-45deg);
+        }
+        }
+    }
+
+}

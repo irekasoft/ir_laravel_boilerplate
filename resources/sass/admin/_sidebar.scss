@@ -2,6 +2,9 @@
 
 .sidebar {
 
+  position: fixed;
+  height: 100%;
+
   background-color: rgb(48, 48, 48);
   width: $sidebar_width;
   padding-top: $topnav_height;
@@ -11,29 +14,38 @@
   overflow-x: hidden;
 
   transition: margin-left .3s;
-  z-index: 999;
+  z-index: $sidebar_zindex; // Change 
     
   & .navbar-nav{
 
     & .nav-item {
-      background-color: rgba(89, 89, 89, 0.79);
+      
       color: white;
       margin:4px;
       margin-bottom:0px;
       padding:0px;
       padding-left: 10px;
       border-radius: 8px;
-      font-size:13px;
+      font-size:13px;    
+
     }
-  
+
+    .nav-item:hover, 
+    .nav-item:active{
+      background-color: rgba(7, 5, 5, 0.256);
+    }
+
     .active {
-      background-color: black;
+      background-color: rgba(89, 89, 89, 0.79);
       color: white;
     }
   
     a {
-      color:white;
+      color:white;    
+
     }      
+
+
   
   }  
 
@@ -42,10 +54,22 @@
     padding:8px;
     font-size: 10px;
     margin-bottom: -8px;
+    color: rgb(177, 177, 177);
 
   }
-  
+
+  // LEFT positioning move the sidebar
+  @media (max-width: $md-breakpoint-width) {
+    left: $sidebar_width * -1 ;
+  }
+
 }
+
+.open {
+  left: 0;
+}
+
+
 
 .sidebar::-webkit-scrollbar {
   width: 0;
