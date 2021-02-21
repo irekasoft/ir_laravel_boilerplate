@@ -240,7 +240,7 @@
           animation: slide-out 1200ms ease-in-out forwards;
 }
 
-.navbar {
+.topnavbar {
   height: 50px;
   padding: 10px;
   padding-left: 20px;
@@ -253,7 +253,7 @@
   width: 100%;
 }
 
-.navbar span {
+.topnavbar span {
   color: gainsboro;
   font-weight: bold;
 }
@@ -280,7 +280,7 @@
   width: 100%;
   background-color: white;
   padding-left: 230px;
-  padding-top: 56px;
+  margin-top: 56px;
   height: 100vh;
 }
 

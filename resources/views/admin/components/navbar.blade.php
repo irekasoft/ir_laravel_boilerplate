@@ -1,4 +1,4 @@
-<div class="navbar" >
+<div class="topnavbar" >
 <div style="display:flex;flex-direction:row;justify-content:center;align-items:center;" >
 
 @isset ($back_url)

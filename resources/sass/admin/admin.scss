@@ -50,7 +50,8 @@ $content_zindex: 500;
   width: 100%;
   background-color: rgb(255, 255, 255);
   padding-left: $sidebar_width;
-  padding-top: $topnav_height;
+//   padding-top: $topnav_height;
+  margin-top: $topnav_height;
   height: 100vh;
 
   @media (max-width: $md-breakpoint-width) {

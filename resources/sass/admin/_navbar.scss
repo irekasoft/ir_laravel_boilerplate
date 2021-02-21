@@ -1,5 +1,4 @@
-
-.navbar {
+.topnavbar {
     height: 50px;
     padding: 10px;
     padding-left: 20px;
@@ -16,11 +15,12 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+
     position: fixed;
     width: 100%;
 
     & span {
-        color: rgb(220, 220, 220);
-        font-weight: bold;
+      color: rgb(220, 220, 220);
+      font-weight: bold;
     }
   }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-@component('admin.components.navbar')  
+@component('admin.components.navbar')
 @slot('title',"Dashboard")
 @endcomponent
 
