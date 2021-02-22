@@ -151,9 +151,9 @@ btnHamburger.addEventListener('click', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/hijazi/Laravel/ir_laravel_boilerplate/resources/js/admin/admin.js */"./resources/js/admin/admin.js");
-__webpack_require__(/*! /Users/hijazi/Laravel/ir_laravel_boilerplate/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/hijazi/Laravel/ir_laravel_boilerplate/resources/sass/admin/admin.scss */"./resources/sass/admin/admin.scss");
+__webpack_require__(/*! /Users/hijazi/Laravel/Learn/ir_laravel_boilerplate/resources/js/admin/admin.js */"./resources/js/admin/admin.js");
+__webpack_require__(/*! /Users/hijazi/Laravel/Learn/ir_laravel_boilerplate/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/hijazi/Laravel/Learn/ir_laravel_boilerplate/resources/sass/admin/admin.scss */"./resources/sass/admin/admin.scss");
 
 
 /***/ })

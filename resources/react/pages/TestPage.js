@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 import CalendarHeatmap from 'react-calendar-heatmap';
-
 import 'react-calendar-heatmap/dist/styles.css';
 
 class TestPage extends Component {
@@ -18,8 +17,16 @@ class TestPage extends Component {
             }}
         >Hello</button>
 
-      <h3>Heatmap</h3>
+        <hr/>
 
+        <button className="btn btn-primary btn-sm"
+            onClick={()=>{
+                alert('Hello');
+            }}
+        >Hello</button>
+
+
+      <h3>Heatmap</h3>
 
       <CalendarHeatmap
         startDate={new Date('2021-01-01')}

@@ -65869,7 +65869,7 @@ if (document.getElementById('example')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/hijazi/Laravel/ir_laravel_boilerplate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/hijazi/Laravel/Learn/ir_laravel_boilerplate/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

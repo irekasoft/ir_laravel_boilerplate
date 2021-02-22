@@ -30197,6 +30197,11 @@ var TestPage = /*#__PURE__*/function (_Component) {
         onClick: function onClick() {
           alert('Hello');
         }
+      }, "Hello"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-primary btn-sm",
+        onClick: function onClick() {
+          alert('Hello');
+        }
       }, "Hello"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heatmap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2___default.a, {
         startDate: new Date('2021-01-01'),
         endDate: new Date('2021-12-31'),
@@ -30233,7 +30238,7 @@ if (document.getElementById("root")) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/hijazi/Laravel/ir_laravel_boilerplate/resources/react/pages/TestPage.js */"./resources/react/pages/TestPage.js");
+module.exports = __webpack_require__(/*! /Users/hijazi/Laravel/Learn/ir_laravel_boilerplate/resources/react/pages/TestPage.js */"./resources/react/pages/TestPage.js");
 
 
 /***/ })

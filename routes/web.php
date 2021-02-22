@@ -10,7 +10,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
+// For authentication
+// -- register / login
 Auth::routes();
 
 Route::get('/', function () {

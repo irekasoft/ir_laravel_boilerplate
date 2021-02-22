@@ -27,6 +27,18 @@ First Laravel setup:
 
 `$ php artisan key:generate`
 
+
+### How to setup auth 
+
+Setup .env file to setup integration with mysql.
+
+`$ php artisan migrate`
+
+
+
+
+
+
 ## Setup React
 
 `$ yarn install`
@@ -36,11 +48,8 @@ To keep compoiling the build files.
 `$ yarn watch`
 
 
-### How to setup auth 
 
-Setup .env file to setup integration with mysql.
 
-`$ php artisan migrate`
 
 ## Make a view 
 
