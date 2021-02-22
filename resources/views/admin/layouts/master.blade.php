@@ -21,11 +21,32 @@
 {{-- <div class="overlay"></div> --}}
 
 {{-- TOPNAV --}}
-<nav id="topnav">
-  <div class="hide-for-desktop">
-    <a id="btnHamburger" class="cursor-pointer" style="color:white;" >Menu</a>
+<nav id="topnav" style="display: flex; flex-direction:row; justify-content: space-between; align-items:center;" >
 
+
+
+  <div style="display: flex; flex-direction:row;">
+    <div class="hide-for-desktop" style="margin-right:10px;">
+        <a id="btnHamburger" class="cursor-pointer" style="color:white;" >Menu</a>
+    </div>
+    <div>
+      <a href="" class="b">App</a>
+    </div>
   </div>
+
+  <div>
+  <a class="btn btn-primary btn-sm" href="{{ route('logout') }}"
+      onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();"
+      style="color:blue;"
+  >
+  Logout
+  </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+  </div>
+
 
 </nav>
 
