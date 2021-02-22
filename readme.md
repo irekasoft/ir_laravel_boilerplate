@@ -7,21 +7,27 @@ Utilizing Bootstrap 5.
 
 Using terminal, go to your development folder.
 
-`$ git clone git@github.com:irekasoft/ir_laravel_boilerplate.git`
+`$ git clone https://github.com/irekasoft/ir_laravel_boilerplate.git`
+
+### Go to the Directory
+
+`cd ir_laravel_boilerplate`
+
+Open in VS Code 
+
+`$ code .`
 
 ### Setup Project
 
 First Laravel setup:
 
-`$ cp env.example .env`
-
 `$ composer install`
+
+`$ cp .env.example .env`
 
 `$ php artisan key:generate`
 
-
-
-Setup React
+## Setup React
 
 `$ yarn install`
 
