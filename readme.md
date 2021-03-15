@@ -37,8 +37,6 @@ Setup .env file to setup integration with mysql.
 
 
 
-
-
 ## Setup React
 
 `$ yarn install`
@@ -48,7 +46,9 @@ To keep compoiling the build files.
 `$ yarn watch`
 
 
+## Update Laravel when Composer Updated
 
+`$ composer update`
 
 
 ## Make a view 
