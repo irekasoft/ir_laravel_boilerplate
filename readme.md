@@ -1,6 +1,6 @@
 # iRekaSoft Laravel Boilerplate
 
-Laravel (5.8.x) + React(16.2.x) setup for web application.
+Laravel (6.x) + React(16.2.x) setup for web application.
 Utilizing Bootstrap 5.
 
 ### Clone to your Machine
