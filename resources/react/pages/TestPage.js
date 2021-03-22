@@ -1,33 +1,54 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import CalendarHeatmap from 'react-calendar-heatmap';
-import 'react-calendar-heatmap/dist/styles.css';
+import CalendarHeatmap from 'react-calendar-heatmap'
+import 'react-calendar-heatmap/dist/styles.css'
+
+import axios from 'axios'
 
 class TestPage extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      title: 'Hello World as',
+    }
+
+  }
+
+  componentDidMount() {
+
+  }
+
 
   render() {
     return (
     <React.Fragment>
     <div className="container">
-      <h1>React Page</h1>
+      <h1>{this.state.title}</h1>
         <button className="btn btn-primary btn-sm"
             onClick={()=>{
-                alert('Hello');
+
+                // alert('Hello');
+
+                this.setState({
+                    title: "Hello ABC"
+                })
+
             }}
         >Hello</button>
 
         <hr/>
 
-        <button className="btn btn-primary btn-sm"
+        {/* <button className="btn btn-primary btn-sm"
             onClick={()=>{
                 alert('Hello');
             }}
-        >Hello</button>
+        >Hello</button> */}
 
-
-      <h3>Heatmap</h3>
-
+      {/* <h3>Heatmap</h3> */}
+{/*
       <CalendarHeatmap
         startDate={new Date('2021-01-01')}
         endDate={new Date('2021-12-31')}
@@ -37,8 +58,7 @@ class TestPage extends Component {
           { date: '2021-01-30', count: 38 },
           // ...and so on
         ]}
-      />
-
+      /> */}
 
     </div>
     </React.Fragment>
