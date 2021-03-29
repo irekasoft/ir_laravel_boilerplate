@@ -5,7 +5,18 @@ import CalendarHeatmap from 'react-calendar-heatmap';
 
 import 'react-calendar-heatmap/dist/styles.css';
 
+import uuid from 'uuid/v4'
+
 class TestPage extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+        order_id: props.order_id,
+    }
+
+  }
 
   render() {
     return (
@@ -19,6 +30,10 @@ class TestPage extends Component {
         >Hello</button>
 
       <h3>Heatmap</h3>
+
+      {this.props.order_id}
+
+      {this.state.order_id}
 
 
       <CalendarHeatmap
@@ -43,5 +58,9 @@ class TestPage extends Component {
 export default TestPage;
 
 if (document.getElementById("root")) {
-  ReactDOM.render(<TestPage />, document.getElementById("root"));
+
+  const element = document.getElementById('root');
+  const props = Object.assign({},element.dataset);
+
+  ReactDOM.render(<TestPage {...props} />, document.getElementById("root"));
 }

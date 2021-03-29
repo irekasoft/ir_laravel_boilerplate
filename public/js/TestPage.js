@@ -30037,6 +30037,128 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./node_modules/uuid/lib/bytesToUuid.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/bytesToUuid.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]]
+  ]).join('');
+}
+
+module.exports = bytesToUuid;
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/lib/rng-browser.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/rng-browser.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/v4.js":
+/*!*********************************!*\
+  !*** ./node_modules/uuid/v4.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ "./node_modules/uuid/lib/rng-browser.js");
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ "./node_modules/uuid/lib/bytesToUuid.js");
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+
+/***/ }),
+
 /***/ "./resources/react/pages/TestPage.js":
 /*!*******************************************!*\
   !*** ./resources/react/pages/TestPage.js ***!
@@ -30054,6 +30176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_calendar_heatmap_dist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-calendar-heatmap/dist/styles.css */ "./node_modules/react-calendar-heatmap/dist/styles.css");
 /* harmony import */ var react_calendar_heatmap_dist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_calendar_heatmap_dist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
@@ -30176,15 +30300,22 @@ function _getPrototypeOf(o) {
 
 
 
+
 var TestPage = /*#__PURE__*/function (_Component) {
   _inherits(TestPage, _Component);
 
   var _super = _createSuper(TestPage);
 
-  function TestPage() {
+  function TestPage(props) {
+    var _this;
+
     _classCallCheck(this, TestPage);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      order_id: props.order_id
+    };
+    return _this;
   }
 
   _createClass(TestPage, [{
@@ -30197,7 +30328,7 @@ var TestPage = /*#__PURE__*/function (_Component) {
         onClick: function onClick() {
           alert('Hello');
         }
-      }, "Hello"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heatmap"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Hello"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heatmap"), this.props.order_id, this.state.order_id, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar_heatmap__WEBPACK_IMPORTED_MODULE_2___default.a, {
         startDate: new Date('2021-01-01'),
         endDate: new Date('2021-12-31'),
         values: [{
@@ -30221,7 +30352,9 @@ var TestPage = /*#__PURE__*/function (_Component) {
 /* harmony default export */ __webpack_exports__["default"] = (TestPage);
 
 if (document.getElementById("root")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestPage, null), document.getElementById("root"));
+  var element = document.getElementById('root');
+  var props = Object.assign({}, element.dataset);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestPage, props), document.getElementById("root"));
 }
 
 /***/ }),
