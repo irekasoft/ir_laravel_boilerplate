@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import CalendarHeatmap from 'react-calendar-heatmap';
+import CalendarHeatmap from 'react-calendar-heatmap'
+import 'react-calendar-heatmap/dist/styles.css'
 
-import 'react-calendar-heatmap/dist/styles.css';
+import axios from 'axios'
 
 import uuid from 'uuid/v4'
 
@@ -13,29 +14,43 @@ class TestPage extends Component {
     super(props);
 
     this.state = {
-        order_id: props.order_id,
+      order_id: props.order_id,
+      title: 'Hello World as',
     }
 
   }
+
+  componentDidMount() {
+
+  }
+
 
   render() {
     return (
     <React.Fragment>
     <div className="container">
-      <h1>React Page</h1>
+      <h1>{this.state.title}</h1>
         <button className="btn btn-primary btn-sm"
             onClick={()=>{
-                alert('Hello');
+
+                // alert('Hello');
+
+                this.setState({
+                    title: "Hello ABC"
+                })
+
             }}
         >Hello</button>
 
-      <h3>Heatmap</h3>
+        <hr/>
 
-      {this.props.order_id}
+      {this.props.order_id} /
 
       {this.state.order_id}
 
 
+      {/* <h3>Heatmap</h3> */}
+{/*
       <CalendarHeatmap
         startDate={new Date('2021-01-01')}
         endDate={new Date('2021-12-31')}
@@ -45,8 +60,7 @@ class TestPage extends Component {
           { date: '2021-01-30', count: 38 },
           // ...and so on
         ]}
-      />
-
+      /> */}
 
     </div>
     </React.Fragment>
