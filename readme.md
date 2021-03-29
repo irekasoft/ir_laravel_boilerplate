@@ -64,7 +64,7 @@ Make a blade view file at views/hello.blade.php by typing.
 
 Laravel Documentation:
 
-https://laravel.com/docs/5.8/authentication
+https://laravel.com/docs/6.x/authentication
 
 ### Using Valet 
 
