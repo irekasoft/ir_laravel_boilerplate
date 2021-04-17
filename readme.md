@@ -7,7 +7,7 @@ Utilizing Bootstrap 5.
 
 Using terminal, go to your development folder.
 
-`$ git clone https://github.com/irekasoft/ir_laravel_boilerplate.git`
+`$ git clone https://github.com/irekasoft/ir_laravel_boilerplate.git <your_project>`
 
 ### Go to the Directory
 

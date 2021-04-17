@@ -7,11 +7,12 @@ $md-breakpoint-width: 768px;
 $sidebar_width : 230px;
 $topnav_height: 56px;
 
-// CORLORS
-$topnav_color: rgb(43, 43, 43);
+// COLORS
+$topnav_color: #2E3449;
+$navbar_bg_color:  #28355f;
+$sidebar_bg_color: #18203A;
 
 // Z-INDEXES
-
 $topnav_zindex: 2000;
 $sidebar_zindex: 1000;
 $content_zindex: 500;
@@ -20,7 +21,6 @@ $content_zindex: 500;
 @import 'sidebar';
 @import 'icons';
 @import 'animations';
-
 @import 'navbar';
 
 #topnav {
@@ -40,8 +40,8 @@ $content_zindex: 500;
 
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100vh;
+//   width: 100vw;
+//   height: 100vh;
 
 }
 
@@ -52,7 +52,7 @@ $content_zindex: 500;
   padding-left: $sidebar_width;
 //   padding-top: $topnav_height;
   margin-top: $topnav_height;
-  height: 100vh;
+//   height: 100vh;
 
   @media (max-width: $md-breakpoint-width) {
 

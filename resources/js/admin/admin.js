@@ -10,21 +10,20 @@ btnHamburger.addEventListener('click', function(){
 
   console.log('click hamburger');
 
-  if(sidebar.classList.contains('open')){ 
-    
-    // Close Hamburger Menu
+  if(sidebar.classList.contains('open')){
 
+    // Close Hamburger Menu
     body.classList.remove('noscroll');
 
-    sidebar.classList.remove('open');    
+    sidebar.classList.remove('open');
 
     fadeElems.forEach(function(element){
       element.classList.remove('fade-in');
       element.classList.add('fade-out');
     });
-    
-  } else { 
-    
+
+  } else {
+
     // Open Hamburger Menu
     body.classList.add('noscroll');
 
@@ -34,6 +33,6 @@ btnHamburger.addEventListener('click', function(){
       element.classList.add('fade-in');
     });
 
-  }  
+  }
 
 });
