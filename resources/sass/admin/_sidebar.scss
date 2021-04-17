@@ -34,7 +34,7 @@
     }
 
     .active {
-      background-color: rgba(89, 89, 89, 0.79);
+      background-color: #4364FF;
       color: white;
     }
 
@@ -53,15 +53,22 @@
 
   }
 
-  // LEFT positioning move the sidebar
-  @media (max-width: $md-breakpoint-width) {
-    left: $sidebar_width * -1 ;
-  }
+  margin-left: 0; // !: Default when on desktop
 
 }
 
-.open {
-  left: 0;
+
+// margin-LEFT positioning move the sidebar
+@media (max-width: $md-breakpoint-width) {
+
+  .sidebar {
+    margin-left: -#{$sidebar_width};
+  }
+
+  .sidebar.active {
+    margin-left: 0;
+  }
+
 }
 
 

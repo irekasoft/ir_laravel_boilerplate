@@ -1,4 +1,9 @@
-.can-fade {
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 @keyframes fade-in {

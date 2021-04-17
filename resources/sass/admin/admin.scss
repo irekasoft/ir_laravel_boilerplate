@@ -8,7 +8,7 @@ $sidebar_width : 230px;
 $topnav_height: 56px;
 
 // COLORS
-$topnav_color: #2E3449;
+$topnav_bg_color: #2E3449;
 $navbar_bg_color:  #28355f;
 $sidebar_bg_color: #18203A;
 
@@ -16,6 +16,8 @@ $sidebar_bg_color: #18203A;
 $topnav_zindex: 2000;
 $sidebar_zindex: 1000;
 $content_zindex: 500;
+$overlay_zindex: 900;
+
 
 @import 'globals';
 @import 'sidebar';
@@ -31,7 +33,7 @@ $content_zindex: 500;
   width: 100%;
   height: $topnav_height;
   padding:12px;
-  background-color: $topnav_color;
+  background-color: $topnav_bg_color;
   z-index: $topnav_zindex;
 
 }
@@ -50,14 +52,11 @@ $content_zindex: 500;
   width: 100%;
   background-color: rgb(255, 255, 255);
   padding-left: $sidebar_width;
-//   padding-top: $topnav_height;
   margin-top: $topnav_height;
 //   height: 100vh;
 
   @media (max-width: $md-breakpoint-width) {
-
     padding-left: 0;
-
   }
 
 }

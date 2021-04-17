@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <link rel="stylesheet" href="{{ mix('css/admin.css') }}" />
@@ -24,14 +24,14 @@
 </head>
 <body>
 
-{{-- <div class="overlay"></div> --}}
+<div id="overlay" class="hidden"></div>
 
 {{-- TOPNAV --}}
 <nav id="topnav" style="display: flex; flex-direction:row; justify-content: space-between; align-items:center;" >
   <div style="display: flex; flex-direction:row;">
     <div class="hide-for-desktop" style="margin-right:10px;">
     <a id="btnHamburger" class="cursor-pointer" style="color:white;" >
-        <i class="bi bi-list"></i>
+      <i class="bi bi-list"></i>
     </a>
     </div>
     <div>
@@ -95,20 +95,15 @@ $section_01_links = [
       'icon_class' => 'bi bi-cpu-fill mr-2'
     ],
 ]
-
 ?>
-
-
 <ul class="navbar-nav">
   @foreach ($section_01_links as $link)
-
   <li class="nav-item {{ ( Request::is( $link['active_path'] , $link['active_path'].'/*' ) ? 'active' : '') }}" >
     <a href="{{$link['link']}}" class="nav-link">
       <i class="{{$link['icon_class']}}" style="margin-bottom:-15px;margin-right:3px;"></i>
       {{ $link['title'] }}
     </a>
   </li>
-
   @endforeach
 </ul>
 
