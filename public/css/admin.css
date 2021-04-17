@@ -45,7 +45,6 @@
   overflow-x: hidden;
   transition: margin-left 0.3s;
   z-index: 1000;
-  margin-left: 0;
 }
 
 .sidebar .navbar-nav .nav-item {

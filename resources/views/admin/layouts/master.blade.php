@@ -63,7 +63,7 @@
 <div id="wrapper">
 
 {{-- SIDEBAR --}}
-<div class="sidebar navbar-nav can-fade">
+<div class="sidebar navbar-nav">
 
 <section >SECTION 1</section>
 
