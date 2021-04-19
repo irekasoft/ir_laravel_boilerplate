@@ -255,7 +255,7 @@
   padding: 10px;
   padding-left: 20px;
   padding-bottom: 14px;
-  background-color: #28355f;
+  background-color: #ffffff;
   box-shadow: 0 4px 4px 0 rgba(120, 120, 120, 0.16);
   display: flex;
   justify-content: space-between;
@@ -265,7 +265,7 @@
 }
 
 .navbar span {
-  color: gainsboro;
+  color: #1d1d1d;
   font-weight: bold;
 }
 

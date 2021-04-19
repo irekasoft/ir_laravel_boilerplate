@@ -9,4 +9,30 @@
 @endslot
 @endcomponent
 
+<div class="container">
+
+<table class="table">
+    <tr>
+    <th width="25px">
+    #
+    </th>
+    <th>
+    Item
+    </th>
+    </tr>
+    @foreach ($tasks as $idx=>$task)
+
+    <tr>
+    <td>{{$idx+1}}</td>
+    <td>
+        {{$task->title}}<br/>
+        {{$task->description}}
+    </td>
+    </tr>
+
+    @endforeach
+
+    </table>
+
+</div>
 @endsection

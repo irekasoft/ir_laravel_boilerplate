@@ -13,7 +13,13 @@ class AdminTasksController extends Controller
      */
     public function index()
     {
-        return view('admin.tasks_index');
+
+      $tasks = \App\Task::all();
+      return view('admin.tasks_index',
+      [
+          'tasks'=> $tasks
+      ]
+      );
     }
 
     /**

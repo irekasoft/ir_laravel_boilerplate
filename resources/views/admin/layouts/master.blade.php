@@ -89,7 +89,7 @@ $section_01_links = [
       'icon_class' => 'bi bi-cpu-fill mr-2'
     ],
     [
-      'title'=>'MasterDetail',
+      'title'=>'Tasks',
       'link' => '/admin/tasks',
       'active_path' => 'admin/tasks',
       'icon_class' => 'bi bi-cpu-fill mr-2'
