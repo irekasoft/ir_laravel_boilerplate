@@ -16,8 +16,6 @@ class TasksTableSeeder extends Seeder
     {
         for ($i=1; $i <= 1000; $i++) {
 
-
-
             $task = new Task;
             $task->title = "Task $i";
 
