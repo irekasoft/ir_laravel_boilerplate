@@ -57,9 +57,6 @@ Make a blade view file at views/hello.blade.php by typing.
 
 `$ php artisan make:view hello`
 
-
-
-
 ### Documentation 
 
 Laravel Documentation:
@@ -70,3 +67,14 @@ https://laravel.com/docs/6.x/authentication
 
 `$ valet link <yoursite>`
 
+--------------------------------------------
+
+## Create a Seeder
+
+How to make seeder file (already created)
+
+`$ php artisan make:seeder TasksTableSeeder`
+
+To seed the db
+
+$ php artisan db:seed --class=TasksTableSeeder

@@ -17,4 +17,6 @@ if ($new_form == true){
 @slot('back_url',route('admin.tasks.index'))
 @endcomponent
 
+
+
 @endsection

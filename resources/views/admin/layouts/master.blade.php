@@ -16,7 +16,7 @@
 
 <title>
   @if(View::hasSection('title'))
-    @yield('title')
+    App - @yield('title')
   @else
     App
   @endif
