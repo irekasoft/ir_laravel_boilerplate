@@ -250,7 +250,7 @@
           animation: slide-out 1200ms ease-in-out forwards;
 }
 
-.navbar {
+.admin-navbar {
   height: 50px;
   padding: 10px;
   padding-left: 20px;
@@ -264,7 +264,13 @@
   z-index: 200;
 }
 
-.navbar span {
+@media (min-width: 768px) {
+  .admin-navbar {
+    width: calc(100% - 230px);
+  }
+}
+
+.admin-navbar span {
   color: #1d1d1d;
   font-weight: bold;
 }

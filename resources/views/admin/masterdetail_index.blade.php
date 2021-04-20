@@ -6,6 +6,7 @@
 @slot('title',"Master Detail")
 @endcomponent
 
+<div class="container-fluid">
 <?php
 
 $list = [];
@@ -38,4 +39,5 @@ Item
 
 </table>
 
+</div>
 @endsection

@@ -1,4 +1,4 @@
-<div class="navbar" >
+<div class="admin-navbar" >
 <div style="display:flex;flex-direction:row;justify-content:center;align-items:center; " >
 
 @isset ($back_url)
@@ -22,3 +22,5 @@
 @endisset
 
 </div>
+
+<div style="height:50px;"></div>
