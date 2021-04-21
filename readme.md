@@ -61,6 +61,10 @@ Make a blade view file at views/hello.blade.php by typing.
 
 `$ php artisan make:view hello`
 
+or adding some spice
+
+`$ php artisan make:view hello --extends=layouts.master --section=content`
+
 ### Documentation 
 
 Laravel Documentation:
