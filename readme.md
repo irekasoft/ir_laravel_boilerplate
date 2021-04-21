@@ -11,7 +11,11 @@ Using terminal, go to your development folder.
 
 ### Go to the Directory
 
-`cd ir_laravel_boilerplate`
+`cd <your_project>`
+
+> *Tips to reset Git Commit to a new one*
+>
+> `$ rm -rf .git && git init`
 
 Open in VS Code 
 
