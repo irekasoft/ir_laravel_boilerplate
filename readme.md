@@ -85,4 +85,6 @@ How to make seeder file (already created)
 
 To seed the db
 
-$ php artisan db:seed --class=TasksTableSeeder
+`$ composer dump-autoload`
+
+`$ php artisan db:seed --class=TasksTableSeeder`
