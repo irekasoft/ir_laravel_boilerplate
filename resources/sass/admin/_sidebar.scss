@@ -33,7 +33,7 @@
       background-color: rgba(255, 255, 255, 0.043);
     }
 
-    .active {
+    .active, .active:hover {
       background-color: #4364FF;
       color: white;
     }

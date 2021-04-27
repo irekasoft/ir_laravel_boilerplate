@@ -62,7 +62,8 @@
   background-color: rgba(255, 255, 255, 0.043);
 }
 
-.sidebar .navbar-nav .active {
+.sidebar .navbar-nav .active,
+.sidebar .navbar-nav .active:hover {
   background-color: #4364FF;
   color: white;
 }
