@@ -9,6 +9,7 @@ Using terminal, go to your development folder.
 
 `$ git clone https://github.com/irekasoft/ir_laravel_boilerplate.git <your_project>`
 
+
 ### Go to the Directory
 
 `cd <your_project>`
@@ -69,9 +70,9 @@ or adding some spice
 
 Laravel Documentation:
 
-https://laravel.com/docs/6.x/authentication
+https://laravel.com/docs/8.x/authentication
 
-### Using Valet 
+### Using Valet (for Mac)
 
 `$ valet link <yoursite>`
 
