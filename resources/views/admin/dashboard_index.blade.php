@@ -62,7 +62,7 @@ $array = [
     ]
 ];
 
-Debugbar::info($array);
+// Debugbar::info($array);
 
 // echo 'berapa:' . count($array);
 
