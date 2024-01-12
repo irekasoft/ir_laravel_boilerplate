@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import CalendarHeatmap from 'react-calendar-heatmap'
-import 'react-calendar-heatmap/dist/styles.css'
+import axios from 'axios' // connection to API
 
-import axios from 'axios'
-
-import uuid from 'uuid/v4'
 
 class TestPage extends Component {
 
@@ -16,6 +12,7 @@ class TestPage extends Component {
     this.state = {
       order_id: props.order_id,
       title: 'Hello World as',
+      count: 1,
     }
 
   }
@@ -24,43 +21,42 @@ class TestPage extends Component {
 
   }
 
-
   render() {
     return (
     <React.Fragment>
-    <div className="container">
-      <h1>{this.state.title}</h1>
-        <button className="btn btn-primary btn-sm"
-            onClick={()=>{
+    <div className="container py-4">
+      
+      <h2>Hello Boilerplate</h2>
 
-                // alert('Hello');
+      <button className="btn btn-primary btn-sm me-2"
+        onClick={()=>{
 
-                this.setState({
-                    title: "Hello ABC"
-                })
+          // alert('Hello');
+          this.setState({
+            count: this.state.count - 1,
+          });
+          
+        }}
+      >
+        Minus
+      </button>
 
-            }}
-        >Hello</button>
+      <button className="btn btn-primary btn-sm"
+        onClick={()=>{
 
-        <hr/>
+          // alert('Hello');
+          this.setState({
+            count: this.state.count + 1,
+          });
+          
+        }}
+      >
+        Plus
+      </button>
 
-      {this.props.order_id} /
+      <hr/>
 
-      {this.state.order_id}
-
-
-      {/* <h3>Heatmap</h3> */}
-{/*
-      <CalendarHeatmap
-        startDate={new Date('2021-01-01')}
-        endDate={new Date('2021-12-31')}
-        values={[
-          { date: '2021-01-01', count: 12 },
-          { date: '2021-01-22', count: 122 },
-          { date: '2021-01-30', count: 38 },
-          // ...and so on
-        ]}
-      /> */}
+      Count : {this.state.count}
 
     </div>
     </React.Fragment>

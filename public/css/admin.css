@@ -1,4 +1,5 @@
-@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css);.hide-for-mobile {
+@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css);
+.hide-for-mobile {
   display: block;
 }
 
@@ -119,23 +120,6 @@
   visibility: visible;
 }
 
-@-webkit-keyframes fade-in {
-  from {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  1% {
-    visibility: visible;
-    opacity: 0;
-  }
-
-  to {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
 @keyframes fade-in {
   from {
     visibility: hidden;
@@ -154,25 +138,7 @@
 }
 
 .fade-in {
-  -webkit-animation: fade-in 200ms ease-in-out forwards;
-          animation: fade-in 200ms ease-in-out forwards;
-}
-
-@-webkit-keyframes fade-out {
-  from {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  99% {
-    visibility: visible;
-    opacity: 0;
-  }
-
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
+  animation: fade-in 200ms ease-in-out forwards;
 }
 
 @keyframes fade-out {
@@ -193,22 +159,11 @@
 }
 
 .fade-out {
-  -webkit-animation: fade-out 200ms ease-in-out forwards;
-          animation: fade-out 200ms ease-in-out forwards;
+  animation: fade-out 200ms ease-in-out forwards;
 }
 
 .can-slide-left {
   visibility: hidden;
-}
-
-@-webkit-keyframes slide-in {
-  from {
-    translate: translateX(-30px);
-  }
-
-  to {
-    translate: translateX(0px);
-  }
 }
 
 @keyframes slide-in {
@@ -222,18 +177,7 @@
 }
 
 .fade-in {
-  -webkit-animation: slide-in 1200ms ease-in-out forwards;
-          animation: slide-in 1200ms ease-in-out forwards;
-}
-
-@-webkit-keyframes slide-out {
-  from {
-    translate: translateX(0px);
-  }
-
-  to {
-    translate: translateX(-30px);
-  }
+  animation: slide-in 1200ms ease-in-out forwards;
 }
 
 @keyframes slide-out {
@@ -247,8 +191,7 @@
 }
 
 .slide-out {
-  -webkit-animation: slide-out 1200ms ease-in-out forwards;
-          animation: slide-out 1200ms ease-in-out forwards;
+  animation: slide-out 1200ms ease-in-out forwards;
 }
 
 .admin-navbar {
@@ -304,4 +247,5 @@
     padding-left: 0;
   }
 }
+
 
