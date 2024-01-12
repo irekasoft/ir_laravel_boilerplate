@@ -23,3 +23,5 @@ mix.sass('resources/sass/admin/admin.scss', 'public/css');
 
 // React
 mix.js('resources/react/pages/TestPage.js','public/js/').react().version();
+
+mix.js('resources/react/pages/MyTasksPage', 'public/js/').react().version();

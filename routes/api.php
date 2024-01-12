@@ -23,4 +23,6 @@ Route::group(['middleware' => 'api'], function () {
 
   Route::get('test_data','TestAPIController@test_data');    
 
+  Route::get('whoami','TestAPIController@whoami');    
+
 });

@@ -21,4 +21,12 @@ class TestAPIController extends Controller{
             ['hello'=>$list]
         );
     }
+
+    function whoami(){
+
+        $user = getUser();
+        $data = ['user' => $user];
+        return response()->json($data, 200);
+        
+    }
 }

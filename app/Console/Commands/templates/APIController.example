@@ -1,0 +1,160 @@
+<?php
+
+namespace App\Http\Controllers\API;
+
+use App\Models\{{prefix}}{{model}};
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+
+/* Add this line at API.php withing specific middleware group
+
+Route::apiResource('{{model_snake_case}}', \V1\{{prefix}}{{model}}APIController::class);
+
+How to call :
+
+Index List:
+get - /api/{{model_snake_case}}
+
+Details
+get - /api/{{model_snake_case}}/id
+
+Delete:
+delete - /api/{{model_snake_case}}/id
+
+Create:
+post - /api/{{model_snake_case}}
+
+Update:
+patch - /api/{{model_snake_case}}/id
+
+
+*/
+
+
+class {{prefix}}{{middleware}}{{model}}APIController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+  public function index(){
+
+    $user = $this->getUser();
+
+    $rows = {{prefix}}{{model}}::where('store_id', $user->store->id)->get();
+
+    $data = [
+      'rows' => $rows,
+    ];
+
+    return response()->json($data, 200);
+  }
+
+  private function getValidator($request, $id){
+
+    $validator = Validator::make($request->all(), [
+    ]);
+
+    return $validator;
+
+  }
+
+  private function updateRow($row, $request){
+
+    $row->example_field = $request->example_field;
+
+    return $row;
+
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $row = new {{prefix}}{{model}};
+
+    $validator = $this->getValidator($request, null);
+    if ($validator->fails()){
+      $data = [ 'errors' => $validator->errors() ];
+      return response()->json($data, 422);
+    }
+
+    $row = $this->updateRow($row, $request);
+    
+
+    // Save
+    $row->save();
+
+    return response()->json(['data'=>$row], 200);
+  }
+
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id) {
+    $row = {{prefix}}{{model}}::find($id);
+
+    return response()->json(['data'=>$row], 200);
+
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+
+    $row = {{prefix}}{{model}}::find($id);
+
+    $validator = $this->getValidator($request, $id);
+    if ($validator->fails()){
+      $data = [ 'errors' => $validator->errors() ];
+      return response()->json($data, 422);
+    }
+
+    $row = $this->updateRow($row, $request);
+
+    // Override if Have
+
+    // Save
+    $row->save();
+
+    return response()->json(['data'=>$row], 200);
+
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+    $row = {{prefix}}{{model}}::find($id);
+
+    $row->delete();
+
+    return response()->json(['data'=>$row,'msg'=>'successfully deleted'], 200);
+  }
+
+  private function getUser(){
+    return Auth::user();
+  }
+
+}
