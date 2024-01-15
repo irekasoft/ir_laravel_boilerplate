@@ -89,3 +89,7 @@ To seed the db
 `$ composer dump-autoload`
 
 `$ php artisan db:seed --class=TasksTableSeeder`
+
+## Generate React
+
+$ php artisan create:react page/MyPage
