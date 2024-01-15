@@ -12,12 +12,12 @@ const mix = require('laravel-mix');
  */
 
 // App.js
-mix.js('resources/js/app.js', 'public/js').react().version();
+mix.js('resources/js/app.js', 'public/js').version();
 
 mix.sass('resources/sass/app.scss', 'public/css');
 
 // Admin
-mix.js('resources/js/admin/admin.js', 'public/js').react().version();
+mix.js('resources/js/admin/admin.js', 'public/js').version();
 
 mix.sass('resources/sass/admin/admin.scss', 'public/css');
 
