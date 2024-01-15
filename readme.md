@@ -92,4 +92,4 @@ To seed the db
 
 ## Generate React
 
-`$ php artisan create:react page/MyPage`
+`$ php artisan create:react pages/MyPage`
