@@ -1,6 +1,7 @@
 # iRekaSoft Laravel Boilerplate
 
 Laravel (8.x) + React(16.2.x) setup for web application.
+
 Utilizing Bootstrap 5.
 
 ### Clone to your Machine
@@ -33,12 +34,11 @@ First Laravel setup:
 `$ php artisan key:generate`
 
 
-### How to setup auth 
+### How to setup Database
 
-Setup .env file to setup integration with mysql.
+Setup .env file to setup integration with MySQL.
 
 `$ php artisan migrate`
-
 
 
 
@@ -46,7 +46,7 @@ Setup .env file to setup integration with mysql.
 
 `$ yarn install`
 
-To keep compoiling the build files.
+To keep watching files & compiling.
 
 `$ yarn watch`
 
@@ -56,25 +56,19 @@ To keep compoiling the build files.
 `$ composer update`
 
 
-## Make a view 
-
-Make a blade view file at views/hello.blade.php by typing.
-
-`$ php artisan make:view hello`
-
-or adding some spice
-
-`$ php artisan make:view hello --extends=layouts.master --section=content`
-
 ### Documentation 
 
 Laravel Documentation:
 
 https://laravel.com/docs/8.x/authentication
 
+
+
 ### Using Valet (for Mac)
 
 `$ valet link <yoursite>`
+
+`$ valet secure <yoursite>`
 
 --------------------------------------------
 
@@ -93,3 +87,10 @@ To seed the db
 ## Generate React
 
 `$ php artisan create:react pages/MyPage`
+
+
+------------------------
+
+## Change PHP Version 
+
+$ brew use php@8.2
