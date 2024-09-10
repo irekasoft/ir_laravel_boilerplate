@@ -18,7 +18,7 @@ class MyTasksPage extends Component {
   render() {
     return (
       <div>
-        MyTasksPage
+        
       </div>
     );
   }

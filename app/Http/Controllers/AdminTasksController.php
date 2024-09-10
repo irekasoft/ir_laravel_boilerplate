@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class AdminTasksController extends Controller
@@ -14,7 +15,7 @@ class AdminTasksController extends Controller
     public function index()
     {
 
-      $tasks = \App\Task::all();
+      $tasks = Task::all();
       return view('admin.tasks_index',
       [
           'tasks'=> $tasks
@@ -29,7 +30,7 @@ class AdminTasksController extends Controller
      */
     public function create()
     {
-        $task = new \App\Task;
+        $task = new Task;
         return view('admin.tasks_newedit',[
             'task'=>$task,
             'new_form'=>true
@@ -55,7 +56,7 @@ class AdminTasksController extends Controller
      */
     public function show($id)
     {
-        $task = \App\Task::find($id);
+        $task = Task::find($id);
         return view('admin.tasks_newedit',[
             'task'=>$task,
             'new_form'=>false
