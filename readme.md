@@ -2,7 +2,7 @@
 
 Laravel (8.x) + React(16.2.x) setup for web application.
 
-Utilizing Bootstrap 5.
+Utilizing Bootstrap 4.x.
 
 ### Clone to your Machine
 
