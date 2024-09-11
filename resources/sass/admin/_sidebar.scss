@@ -1,25 +1,32 @@
 // SIDEBAR
+$sidebar_bg_color: #ffffff;
 
 .sidebar {
 
   position: fixed;
   height: 100%;
 
-  background-color: $sidebar_bg_color;
+  background-color: $sidebar_bg_color; // This will now be black
   width: $sidebar_width;
   padding-top: $topnav_height;
-  color: white;
+  color: rgb(87, 87, 87);
 
   overflow-y: scroll; // Let item inside scroll
   overflow-x: hidden;
 
+  border-right: 1px #e9e9e9 solid;
+
   transition: margin-left .3s;
-  z-index: $sidebar_zindex; // Change
+  z-index: 500; // Change
+
+  $active_color: rgb(255, 255, 255); // White for active/selected items
+  $inactive_color: rgb(104, 104, 104); // Lighter grey for inactive items
+  $hover_color: rgb(124, 124, 124); // Darker grey for hover state
 
   & .navbar-nav{
 
     & .nav-item {
-      color: white;
+      color: $inactive_color;
       margin:4px;
       margin-bottom:0px;
       padding:0px;
@@ -30,16 +37,24 @@
 
     .nav-item:hover,
     .nav-item:active{
-      background-color: rgba(255, 255, 255, 0.043);
+      background-color: rgba(255, 255, 255, 0.1); // Slightly lighter for visibility
+      color: $hover_color; // Darker grey on hover
     }
 
     .active, .active:hover {
       background-color: #4364FF;
-      color: white;
+      color: $active_color; // White for selected items
+
+      a {
+        color: $active_color; // Ensure the link is also white when active
+      }
     }
 
     a {
-      color:white;
+      color: $inactive_color;
+      &:hover {
+        color: $hover_color; // Darker grey on hover
+      }
     }
 
   }
@@ -49,7 +64,7 @@
     padding:8px;
     font-size: 10px;
     margin-bottom: -8px;
-    color: rgb(177, 177, 177);
+    color: rgb(100, 100, 100); // Lighter grey for better visibility on black
 
   }
 
@@ -66,11 +81,10 @@
 
   .sidebar.active {
     margin-left: 0;
+    z-index: 999;
   }
 
 }
-
-
 
 .sidebar::-webkit-scrollbar {
   width: 0;

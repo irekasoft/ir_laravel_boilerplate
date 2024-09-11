@@ -1,8 +1,6 @@
 const btnHamburger = document.querySelector('#btnHamburger');
 const body = document.querySelector('body');
 
-
-
 const sidebar = document.querySelector('.sidebar');
 const overlay = document.querySelector('#overlay');
 

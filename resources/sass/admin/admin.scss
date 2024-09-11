@@ -1,3 +1,5 @@
+
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 // BREAKPOINTS
@@ -7,10 +9,28 @@ $md-breakpoint-width: 768px;
 $sidebar_width : 230px;
 $topnav_height: 56px;
 
+$primary: #173ad5;
+$secondary: #363636;
+
+$border-radius: 0.55rem;
+$border-radius-sm:0.5rem;
+
+@import "~bootstrap/scss/bootstrap";
+
+// Load Bootstrap CSS
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: rgb(58, 82, 28);
+}
+
 // COLORS
-$topnav_bg_color: #2E3449;
+$topnav_bg_color: #ffffff;
 $navbar_bg_color:  #ffffff;
-$sidebar_bg_color: #18203A;
+
 
 // Z-INDEXES
 $topnav_zindex: 2000;
@@ -20,6 +40,8 @@ $overlay_zindex: 900;
 
 
 @import 'globals';
+
+
 @import 'sidebar';
 @import 'icons';
 @import 'animations';
@@ -34,8 +56,8 @@ $overlay_zindex: 900;
   height: $topnav_height;
   padding:12px;
   background-color: $topnav_bg_color;
-  z-index: $topnav_zindex;
-
+  z-index: 1000;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 #wrapper {

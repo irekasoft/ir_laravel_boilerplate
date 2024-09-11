@@ -7,12 +7,6 @@
 
 <link rel="stylesheet" href="{{ mix('css/admin.css') }}" />
 
-<!-- CSS only -->
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-  rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-  crossorigin="anonymous"
-/>
 
 <title>
   @if(View::hasSection('title'))
@@ -30,7 +24,7 @@
 <nav id="topnav" style="display: flex; flex-direction:row; justify-content: space-between; align-items:center;" >
   <div style="display: flex; flex-direction:row;">
     <div class="hide-for-desktop" style="margin-right:10px;">
-    <a id="btnHamburger" class="cursor-pointer" style="color:white;" >
+    <a id="btnHamburger" class="cursor-pointer" style="color:rgb(0, 0, 0);" >
       <i class="bi bi-list"></i>
     </a>
     </div>
@@ -40,22 +34,32 @@
   </div>
 
   <div>
-  <a class="btn btn-primary btn-sm"
-    onclick="
-      event.preventDefault();
-      var result = confirm('Are you sure want to logout?');
-      if (result == true){
-          document.getElementById('logout-form').submit();
-      }
-      "
-    style="color:blue;"
-  >
-  Logout
-  </a>
+    <div class="dropdown">
+      <a href="#" class="" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div style="width: 32px; height: 32px; background-color: #808080; border-radius: 50%;"></div>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">        
+        <li>
+          <a 
+            class="dropdown-item" 
+            href="#"             
+            onclick="
+              event.preventDefault();
+              var result = confirm('Are you sure want to logout?');
+              if (result == true){
+                document.getElementById('logout-form').submit();
+              }
+            "    
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
       @csrf
     </form>
-  </div>
+  </nav>
 </nav>
 
 
@@ -96,6 +100,7 @@ $section_01_links = [
     ],
 ]
 ?>
+
 <ul class="navbar-nav">
   @foreach ($section_01_links as $link)
   <li class="nav-item {{ ( Request::is( $link['active_path'] , $link['active_path'].'/*' ) ? 'active' : '') }}" >
