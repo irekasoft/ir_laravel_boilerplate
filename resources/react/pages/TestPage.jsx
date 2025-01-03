@@ -12,7 +12,7 @@ class TestPage extends Component {
     this.state = {
       order_id: props.order_id,
       title: 'Hello World as',
-      count: 1,
+      count: 112312,
     }
 
   }
@@ -26,7 +26,7 @@ class TestPage extends Component {
     <React.Fragment>
     <div className="container py-4">
       
-      <h2>Hello Boilerplate TEST</h2>
+      <h2>Hello Boilerplate </h2>
 
       <button className="btn btn-primary btn-sm me-2"
         onClick={()=>{
