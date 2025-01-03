@@ -26,7 +26,7 @@ class TestPage extends Component {
     <React.Fragment>
     <div className="container py-4">
       
-      <h2>Hello Boilerplate</h2>
+      <h2>Hello Boilerplate TEST</h2>
 
       <button className="btn btn-primary btn-sm me-2"
         onClick={()=>{
@@ -67,10 +67,10 @@ class TestPage extends Component {
 
 export default TestPage;
 
-if (document.getElementById("root")) {
+if (document.getElementById("TestPage")) {
 
-  const element = document.getElementById('root');
+  const element = document.getElementById('TestPage');
   const props = Object.assign({},element.dataset);
 
-  ReactDOM.render(<TestPage {...props} />, document.getElementById("root"));
+  ReactDOM.render(<TestPage {...props} />, document.getElementById("TestPage"));
 }
