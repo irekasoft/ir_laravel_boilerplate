@@ -6,11 +6,15 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/js/app.js',
                 'resources/react/pages/TestPage.jsx'
             ],
             refresh: true,
         }),
         react(),
     ],
+    build: {
+        // Ensure the manifest is generated
+        manifest: true,
+        outDir: 'public/build',
+    }
 }); 
