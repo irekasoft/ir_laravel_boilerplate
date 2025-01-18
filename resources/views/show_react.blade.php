@@ -14,11 +14,10 @@
 
 $order_id = 24;
 
-
 ?>
 
 <div id="TestPage" data-order_id="{{$order_id}}"></div>
-@viteAssets('resources/react/pages/TestPage.jsx')
+@vite('resources/react/pages/TestPage.jsx')
 
 
 </body>
