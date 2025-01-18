@@ -13,8 +13,12 @@ export default defineConfig({
         react(),
     ],
     build: {
-        // Ensure the manifest is generated
-        manifest: true,
-        outDir: 'public/build',
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true
+            }
+        }
     }
 }); 
