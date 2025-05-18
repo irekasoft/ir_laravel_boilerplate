@@ -6,12 +6,15 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/react/pages/TestPage.jsx'
+                'resources/react/pages/TestPage.jsx'                
             ],
             refresh: true,
         }),
         react(),
     ],
+    server: {
+        host: 'boilerplate.test',
+    },
     build: {
         minify: 'terser',
         terserOptions: {
